@@ -6,9 +6,13 @@
   Go back
 </a>
 
+<div>
+  <a href="/delete_actor/<%= @the_actor.id %>">Delete actor</a>
+</div>
+
 <hr>
 
-<form action="/modify_actor_record/<%= @the_director.id %>"  method="post">
+<form action="/modify_actor_record/<%= @the_actor.id %>"  method="post">
   <div>
     <label for="name_field">Name</label>
     <input id="name_field" type ="text" name="name" value="<%= @the_actor.name %>">
@@ -21,14 +25,14 @@
 
   <div>
     <label for="bio_box">Bio</label>
-    <input id="bio_box" type ="textarea" name="bio" value="<%= the_actor.bio %>">
+    <input id="bio_box" type ="textarea" name="bio" value="<%= @the_actor.bio %>">
 
   <div>
     <label for="image_field">Image</label>
-    <input id="image_field" type ="text" name="image" value="<%= the_actor.image %>">
+    <input id="image_field" type ="text" name="image" value="<%= @the_actor.image %>">
   </div>
 
-  <button>Delete actor</button>
+  <button>Update actor</button>
 
 <hr>
 

@@ -25,11 +25,11 @@
 
   <div>
     <label for="duration_field">Duration</label>
-    <input id="duration_field" type ="text" name="duration" value="<%= the_movie.duration %>">
+    <input id="duration_field" type ="text" name="duration" value="<%= @the_movie.duration %>">
 
   <div>
     <label for="description_field">Description</label>
-    <input id="description_field" type ="text" name="description" value="<%= the_movie.description %>">
+    <input id="description_field" type ="text" name="description" value="<%= @the_movie.description %>">
   </div>
 
   <div>
@@ -42,7 +42,7 @@
     <input id="director_id_field" type ="text" name="director_id" value="<%= @the_movie.director_id %>">
   </div>
 
-  <button>Delete movie</button>
+  <button>Update movie</button>
 
 <hr>
 

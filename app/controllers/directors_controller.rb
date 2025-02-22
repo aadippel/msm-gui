@@ -1,4 +1,25 @@
 class DirectorsController < ApplicationController
+  def update
+    # Get the ID out of params
+    d_id = params.fetch("the_id")
+
+    # Look up the existing record
+    matching_records = Director.where({ :id => d_id })
+    the_director = matching_records.at(0)
+
+    # Overwrite each column with the values from user inputs
+    the_director.name = params.fetch("name")
+    the_director.dob = params.fetch("dob")
+    the_director.bio = params.fetch("bio")
+    the_director.image = params.fetch("image")
+
+    # Save
+    the_director.save
+
+    # Redirect to the director details page
+    redirect_to("/directors/#{the_director.id}")
+  end
+  
   def create
     # Params hask looks like this:
     # {"name"=>"1", "dob"=>"2", "bio"=>"3", "image"=>"4"}

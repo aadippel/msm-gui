@@ -1,4 +1,25 @@
 class ActorsController < ApplicationController
+  def update
+    # Get the ID out of params
+    a_id = params.fetch("the_id")
+
+    # Look up the existing record
+    matching_records = Actor.where({ :id => a_id })
+    the_actor = matching_records.at(0)
+
+    # Overwrite each column with the values from user inputs
+    the_actor.name = params.fetch("name")
+    the_actor.dob = params.fetch("dob")
+    the_actor.bio = params.fetch("bio")
+    the_actor.image = params.fetch("image")
+
+    # Save
+    the_actor.save
+
+    # Redirect to the actor details page
+    redirect_to("/actors/#{the_actor.id}")
+  end
+
   def create
     # Params hask looks like this:
     # {"name"=>"1", "dob"=>"2", "bio"=>"3", "image"=>"4"}
