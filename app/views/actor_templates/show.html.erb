@@ -8,6 +8,32 @@
 
 <hr>
 
+<form action="/modify_actor_record/<%= @the_director.id %>"  method="post">
+  <div>
+    <label for="name_field">Name</label>
+    <input id="name_field" type ="text" name="name" value="<%= @the_actor.name %>">
+  </div>
+
+  <div>
+    <label for="dob_field">Dob</label>
+    <input id="dob_field" type ="text" name="dob" value="<%= @the_actor.dob %>">
+  </div>
+
+  <div>
+    <label for="bio_box">Bio</label>
+    <input id="bio_box" type ="textarea" name="bio" value="<%= the_actor.bio %>">
+
+  <div>
+    <label for="image_field">Image</label>
+    <input id="image_field" type ="text" name="image" value="<%= the_actor.image %>">
+  </div>
+
+  <button>Delete actor</button>
+
+<hr>
+
+<hr>
+
 <dl>
   <dt>
     Name
